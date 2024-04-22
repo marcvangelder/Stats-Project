@@ -1,0 +1,66 @@
+---
+title: "Penguins EDA"
+format:
+  html:
+    code-fold: true
+---
+```{r}
+# Install and load the renv package
+#install.packages("renv")
+#library(renv)
+```
+
+```{r}
+#renv::init()
+#renv::status()
+```
+```{r}
+#install.packages("palmerpenguins", dependencies = TRUE, type = "binary")
+#install.packages("dplyr", dependencies = TRUE, type = "binary")
+#install.packages("ggplot2", dependencies = TRUE, type = "binary")
+#install.packages("duckdb", dependencies = TRUE, type = "binary")
+```
+
+## Penguin Size and Mass by Sex and Species
+
+``` {r, message=FALSE}
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+library(duckdb)
+
+df <- palmerpenguins::penguins
+```
+
+``` {r, message=FALSE}
+df %>%
+  group_by(species, sex) %>%
+  summarise(
+    across(
+      where(is.numeric), 
+      \(x) mean(x, na.rm = TRUE)
+      )
+    ) %>%
+  knitr::kable()
+```
+
+## Penguin Size vs Mass by Species
+
+``` {r, message=FALSE}
+df %>%
+  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+```{r}
+con <- DBI::dbConnect(
+  duckdb::duckdb(), 
+  dbdir = "my-db.duckdb"
+  )
+df <- dplyr::tbl(con, "penguins")
+```
+
+```{r}
+#renv::snapshot()
+```
+
