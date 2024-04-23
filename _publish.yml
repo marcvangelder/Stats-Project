@@ -1,0 +1,35 @@
+name: Publish Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install jupyter
+          pip install -r requirements.txt
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: '4.1'
+
+      - name: Install renv and restore
+        run: |
+          Rscript -e 'install.packages("renv")'
+          Rscript -e 'renv::restore()'
+
+      - name: Publish website
+        run: |
+          # Command to publish the website
+          # Replace this with the actual command to publish your website
