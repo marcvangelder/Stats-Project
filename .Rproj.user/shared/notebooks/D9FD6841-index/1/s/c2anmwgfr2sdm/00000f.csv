@@ -1,0 +1,40 @@
+"0","# Install and load the renv package"
+"0","install.packages(""renv"")"
+"1","The following package(s) will be installed:
+"
+"1","- renv [1.0.5]
+"
+"1","These packages will be installed into ""~/project/renv/library/R-4.3/x86_64-w64-mingw32"".
+"
+"1","
+"
+"0","Y"
+"1","
+"
+"1","# Installing packages --------------------------------------------------------
+"
+"1","- Installing renv ...                           "
+"1","OK [linked from cache]
+"
+"1","Successfully installed 1 package in 0.15 seconds.
+"
+"0","library(renv)"
+"2","
+Attaching package: ‘renv’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    embed, update
+
+"
+"2","The following objects are masked from ‘package:utils’:
+
+    history, upgrade
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    autoload, load, remove
+
+"

@@ -1,0 +1,2 @@
+[1,"==> quarto preview eda.qmd --to html --no-watch-inputs --no-browse\n\n"]
+[1,"ERROR: YAMLException: bad indentation of a sequence entry (C:\\Users\\C25Marc.VanGelder\\OneDrive - afacademy.af.edu\\Documents\\project\\_quarto.yml, 11:13)\n10:       - about.qmd\n11:         text: About\n               ~~\n12:       - href: eda.qmd\n"]

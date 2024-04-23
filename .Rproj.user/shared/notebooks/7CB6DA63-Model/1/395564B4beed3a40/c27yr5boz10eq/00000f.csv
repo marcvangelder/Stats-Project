@@ -1,0 +1,22 @@
+"0","v = VetiverModel(model, model_name='penguin_model', prototype_data=X)"
+"0","b = pins.board_folder('data/model', allow_pickle_read=True)"
+"0","vetiver.vetiver_pin_write(b,v)"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'vetiver' is not defined
+"
+"0","v = vetiver.VetiverModel.from_pin(b,'penguin_model')"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'vetiver' is not defined
+"
+"0","app = vetiver.VetiverAPI(v, check_prototype=True)"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'vetiver' is not defined
+"
+"0","app.run(port = 8080)"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'app' is not defined
+"

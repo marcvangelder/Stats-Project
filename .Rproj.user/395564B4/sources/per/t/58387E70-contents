@@ -1,0 +1,24 @@
+---
+title: "project"
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+# Install and load the renv package
+install.packages("renv")
+library(renv)
+
+```
+
+```{r}
+install.packages("palmerpenguins", dependencies = TRUE, type = "binary")
+install.packages("dplyr", dependencies = TRUE, type = "binary")
+install.packages("ggplot2", dependencies = TRUE, type = "binary")
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+
+```

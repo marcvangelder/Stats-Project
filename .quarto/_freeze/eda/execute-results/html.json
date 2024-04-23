@@ -1,0 +1,15 @@
+{
+  "hash": "f7666987e1ab6f5584a6e89f4bb85207",
+  "result": {
+    "engine": "knitr",
+    "markdown": "::: {.cell}\n\n```{.r .cell-code}\n# Install and load the renv package\ninstall.packages(\"renv\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nThe following package(s) will be installed:\n- renv [1.0.5]\nThese packages will be installed into \"~/project/renv/library/R-4.3/x86_64-w64-mingw32\".\n\n# Installing packages --------------------------------------------------------\n- Installing renv ...                           OK [linked from cache]\nSuccessfully installed 1 package in 22 milliseconds.\n```\n\n\n:::\n\n```{.r .cell-code}\nlibrary(renv)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n\nAttaching package: 'renv'\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following objects are masked from 'package:stats':\n\n    embed, update\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following objects are masked from 'package:utils':\n\n    history, upgrade\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following objects are masked from 'package:base':\n\n    autoload, load, remove\n```\n\n\n:::\n\n```{.r .cell-code}\n# Initialize the renv environment\nrenv::init()\n```\n:::\n\n---\ntitle: \"Penguins EDA\"\nformat:\n  html:\n    code-fold: true\n---\n\n\n## Penguin Size and Mass by Sex and Species\n\n``` {.r .cell-code}\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\n\ndf <- palmerpenguins::penguins\n```\n\n``` {.r .cell-code}\ndf %>%\n  group_by(species, sex) %>%\n  summarise(\n    across(\n      where(is.numeric), \n      \\(x) mean(x, na.rm = TRUE)\n      )\n    ) %>%\n  knitr::kable()\n```\n\n## Penguin Size vs Mass by Species\n\n``` {.r .cell-code}\ndf %>%\n  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +\n  geom_point() + \n  geom_smooth(method = \"lm\")\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

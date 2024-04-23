@@ -1,0 +1,13 @@
+"0","# Install and load the renv package"
+"2","Warning in runHook("".onLoad"", env, package.lib, package) :"
+"2","
+ "
+"2"," internal error -3 in R_decompress1
+"
+"2","Error in runHook("".onLoad"", env, package.lib, package) : 
+  lazy-load database 'C:/Users/C25Marc.VanGelder/OneDrive - afacademy.af.edu/Documents/project/renv/library/R-4.3/x86_64-w64-mingw32/renv/R/renv.rdb' is corrupt
+"
+"0","install.packages(""renv"")"
+"2","Error in renv_consent_check() : 
+  could not find function ""renv_consent_check""
+"

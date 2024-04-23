@@ -1,0 +1,1 @@
+{"frames":[{"func":"install.packages(\"renv\")","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0},{"func":"install(pkgs)","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in renv_consent_check() : \n  could not find function \"renv_consent_check\"\n"}
