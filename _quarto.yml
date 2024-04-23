@@ -14,6 +14,13 @@ website:
       - href: Model.qmd
         text: Model
 
+content:
+  dir: content  # Specify the directory containing content files
+  include:
+    - Model.qmd
+    - app.py
+    - eda.qmd
+
 format:
   html:
     theme: cosmo
