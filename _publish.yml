@@ -2,7 +2,7 @@ quarto:
   publish:
     github:
       repository: marcvangelder/Stats-Project
-      branch: gh-pages
+      branch: master
     actions:
       workflow: .github/workflows/publish.yml
       setup:
