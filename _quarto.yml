@@ -7,7 +7,6 @@ website:
     left:
       - text: Home
         file: index.qmd
-      - about.qmd
       - eda.qmd
       - Model.qmd
 
