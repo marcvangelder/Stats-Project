@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "eda.html",
+    "href": "eda.html",
+    "title": "Penguins EDA",
+    "section": "",
+    "text": "Code\n# Install and load the renv package\ninstall.packages(\"renv\")\n\n\nThe following package(s) will be installed:\n- renv [1.0.5]\nThese packages will be installed into \"~/project/renv/library/R-4.3/x86_64-w64-mingw32\".\n\n# Installing packages --------------------------------------------------------\n- Installing renv ...                           OK [linked from cache]\nSuccessfully installed 1 package in 22 milliseconds.\n\n\nCode\nlibrary(renv)\n\n\n\nAttaching package: 'renv'\n\n\nThe following objects are masked from 'package:stats':\n\n    embed, update\n\n\nThe following objects are masked from 'package:utils':\n\n    history, upgrade\n\n\nThe following objects are masked from 'package:base':\n\n    autoload, load, remove\n\n\nCode\n# Initialize the renv environment\nrenv::init()"
+  },
+  {
+    "objectID": "eda.html#penguin-size-and-mass-by-sex-and-species",
+    "href": "eda.html#penguin-size-and-mass-by-sex-and-species",
+    "title": "Penguins EDA",
+    "section": "Penguin Size and Mass by Sex and Species",
+    "text": "Penguin Size and Mass by Sex and Species\n\nCode\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\n\ndf &lt;- palmerpenguins::penguins\n\n\nCode\ndf %&gt;%\n  group_by(species, sex) %&gt;%\n  summarise(\n    across(\n      where(is.numeric), \n      \\(x) mean(x, na.rm = TRUE)\n      )\n    ) %&gt;%\n  knitr::kable()"
+  },
+  {
+    "objectID": "eda.html#penguin-size-vs-mass-by-species",
+    "href": "eda.html#penguin-size-vs-mass-by-species",
+    "title": "Penguins EDA",
+    "section": "Penguin Size vs Mass by Species",
+    "text": "Penguin Size vs Mass by Species\n\nCode\ndf %&gt;%\n  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +\n  geom_point() + \n  geom_smooth(method = \"lm\")"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
