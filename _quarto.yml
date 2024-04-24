@@ -5,10 +5,12 @@ website:
   title: "project"
   navbar:
     left:
-      - text: Home
-        file: index.qmd
-      - eda.qmd
-      - Model.qmd
+      - href: index.qmd
+        text: Home
+      - href: eda.qmd
+        text: Exploratory Data Analysis
+      - href: Model.qmd
+        text: Model
 
 format:
   html:
